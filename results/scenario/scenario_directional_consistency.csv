@@ -1,0 +1,7 @@
+﻿cohort,scenario,n,fraction_lower_HR,fraction_lower_Tcore,fraction_lower_mPSI
+primary,rest,6,1.0,1.0,1.0
+primary,rest_environment,6,1.0,1.0,1.0
+primary,workload_reduction,6,1.0,0.3333333333333333,1.0
+supplementary,rest,24,1.0,1.0,1.0
+supplementary,rest_environment,24,1.0,1.0,1.0
+supplementary,workload_reduction,24,1.0,0.08333333333333333,1.0

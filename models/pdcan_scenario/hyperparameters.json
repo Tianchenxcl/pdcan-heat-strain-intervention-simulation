@@ -1,0 +1,33 @@
+{
+  "static_hidden": [
+    64,
+    64
+  ],
+  "tcn_channels": [
+    64,
+    64
+  ],
+  "tcn_kernel": 5,
+  "history_gru_hidden_dims": [
+    128,
+    128
+  ],
+  "control_gru_hidden": 64,
+  "decoder_hidden_dims": [
+    64,
+    128
+  ],
+  "dropout": 0.1,
+  "activation": "silu",
+  "lr": 0.001,
+  "weight_decay": 1e-05,
+  "batch_size": 128,
+  "alpha_hr": 1.5,
+  "alpha_tskin": 1.0,
+  "alpha_tcore": 1.0,
+  "lambda_phys": 1.0,
+  "lambda_mpsi": 3.0,
+  "lambda_smooth": 0.0001,
+  "tf_start": 0.8,
+  "tf_end": 0.05
+}

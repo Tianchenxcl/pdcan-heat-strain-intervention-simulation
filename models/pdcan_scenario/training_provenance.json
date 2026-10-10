@@ -1,0 +1,18 @@
+{
+  "source": "New fixed-epoch fit completed for this scenario experiment; original manuscript checkpoint was not available",
+  "seed": 143,
+  "epochs": 50,
+  "train_rows": 9552,
+  "train_sha256": "1aeec39f82cde7e078816e7303e332c14a269f34c8789b72f8630b50e2061029",
+  "checkpoint_sha256": "c172c677b91c66572cd002f97f020d6ee40d3696e05ddea75400683de81fc58b",
+  "python": "3.12.14",
+  "torch": "2.14.1+cpu",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "device": "cpu",
+  "test_labels_used_for_training_or_selection": false,
+  "use_future_context": true,
+  "use_autoregressive_feedback": false,
+  "use_mpsi_residual": true,
+  "note": "Training completed before adding provenance logging; this record reflects the completed 50-epoch run and saved history."
+}

@@ -1,0 +1,61 @@
+{
+  "protocol_version": "selected-componentwise-v1",
+  "train_sha256": "1aeec39f82cde7e078816e7303e332c14a269f34c8789b72f8630b50e2061029",
+  "test_sha256": "6a58b661d10805c2cc41dc6ce36b8f273a53a934d60ae0285c7fd0ccf2448872",
+  "n_test": 336,
+  "n_selected": 30,
+  "n_primary": 6,
+  "n_supplementary": 24,
+  "primary_ids": [
+    255,
+    271,
+    287,
+    303,
+    319,
+    335
+  ],
+  "scenario_order": [
+    "continued_work",
+    "rest",
+    "rest_environment",
+    "workload_reduction"
+  ],
+  "control_order": [
+    "humidity",
+    "air_temperature",
+    "wind_speed",
+    "radiant_environment",
+    "oxygen_consumption"
+  ],
+  "rest_level": 3.5,
+  "rest_pool_n": 20,
+  "rest_environment_pool_n": 7,
+  "screening": "Type 3, current and future workload above rest, non-increasing future workload, no future increase over current, final drop > 0.1.",
+  "primary": "Eligible + past 5-minute workload range <= 0.1 + immediate drop.",
+  "matching": "Euclidean distance in static, recent and current historical input features; standardized with training inputs only; no future physiology or predictions.",
+  "donor_use": "Type-1 oxygen sequence only for rest; Type-2 complete joint environmental sequence only for rest_environment; no donor outcomes are used.",
+  "reference": "continued_work is a synthetic model reference; workload_reduction preserves factual inputs and alone has observed outcome labels.",
+  "interpretation": "Model scenario projections, not causal effects or counterfactual accuracy validation.",
+  "dependence": "Overlapping windows exist. Participant/session IDs are unavailable in these CSVs; no independence, confidence interval or significance claim is made.",
+  "support_limit": "Marginal range checks do not demonstrate joint or history-conditioned support.",
+  "prospective_limit": "Type and future measured workload are used to select this retrospective demonstration; this is not a prospective treatment-selection algorithm.",
+  "model": "PDCAN",
+  "checkpoint": "models/pdcan_scenario/final_model_state_dict.pt",
+  "checkpoint_sha256": "c172c677b91c66572cd002f97f020d6ee40d3696e05ddea75400683de81fc58b",
+  "prediction_outputs": [
+    "scenario_predictions_long.csv",
+    "scenario_final_outcomes.csv",
+    "scenario_summary.csv"
+  ],
+  "outcome_rule": "Only workload_reduction is compared with observed physiological labels; alternatives are model projections.",
+  "statistical_rule": "Descriptive only: primary n=6; supplementary windows overlap; participant/session identifiers are unavailable.",
+  "mpsi_rule": "Native final risk output includes the formula and learned residual; it is related to predicted HR/Tcore and is not an independent validation outcome.",
+  "future_context_limit": "PDCAN uses the entire future control plan in its encoder, so delayed-plan forecasts can differ before intervention onset; see prefix diagnostics.",
+  "model_scalers_sha256": "ff36a4b246ed6bb387d94a445dc429e0e9bc74cb5ee5db1466fba64a985780da",
+  "model_provenance": "models/pdcan_scenario/training_provenance.json",
+  "validation": {
+    "finite_outputs": true,
+    "factual_control_identity": true,
+    "factual_prediction_identity": true
+  }
+}

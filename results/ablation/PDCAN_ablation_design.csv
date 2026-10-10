@@ -1,0 +1,6 @@
+﻿model,label,paper_label,use_future_context,use_autoregressive_feedback,use_mpsi_residual,lambda_smooth,description
+PDCAN,PDCAN,Full PDCAN,True,False,True,0.0001,Selected Physiology-Driven Control Aware Network using future-control-aware recurrent decoding without explicit predicted-output physiological feedback.
+PDCAN_AR_feedback,PDCAN-AR,with autoregressive physiological feedback,True,True,True,0.0001,Adds explicit feedback of the previous predicted HR/Tskin/Tcore into the next decoder step. This tests whether the old autoregressive-feedback mechanism improves or worsens the selected PDCAN.
+PDCAN_no_future_context,PDCAN w/o future-control context,w/o future-control context encoder,False,False,True,0.0001,Removes the encoder-level global future-control context while retaining minute-level future controls in the decoder.
+PDCAN_no_smooth_loss,PDCAN w/o smoothness loss,w/o trajectory smoothness loss,True,False,True,0.0,Keeps the selected PDCAN architecture but removes the second-order trajectory smoothness regularization term.
+PDCAN_formula_mpsi_only,PDCAN w/o residual mPSI calibration,w/o residual mPSI calibration head,True,False,False,0.0001,"Keeps the selected PDCAN trajectory decoder but removes the learned residual mPSI calibration head, leaving only the formula-based mPSI output."
